@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment complete — Nimo</title>
+<meta name="description" content="Return to the Nimo app.">
+<meta property="og:title" content="Payment complete — Nimo">
+<meta property="og:description" content="Return to the Nimo app.">
+<meta property="og:image" content="https://nimo.ardena.co.ke/assets/mascot.svg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../"><img src="../assets/mascot.svg" alt="">Nimo</a>
+  <nav class="nav"><a href="../#how">How it works</a><a href="../#voices">Voices</a><a href="../#pricing">Pricing</a><a href="../support/">Support</a></nav>
+</div></header>
+<main>
+<div class="wrap center-page"><div>
+  <img src="../assets/mascot.svg" alt="">
+  <h1 style="margin:0 0 10px;letter-spacing:-1px">Thanks! You’re all set.</h1>
+  <p>Head back to the Nimo app. Your plan updates as soon as the payment is confirmed.</p>
+  <a class="btn" id="open" href="nimo://payment-complete">Open Nimo</a>
+</div></div>
+<script>
+  // Pass Paystack's reference back to the app so it can confirm the payment.
+  const ref = new URLSearchParams(location.search).get('reference');
+  if (ref) document.getElementById('open').href = 'nimo://payment-complete?reference=' + encodeURIComponent(ref);
+</script>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <span>© 2026 Ardena. Nimo is made in Kenya.</span>
+  <nav><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="../delete-account/">Delete account</a><a href="../support/">Support</a></nav>
+</div></footer>
+</body>
+</html>
